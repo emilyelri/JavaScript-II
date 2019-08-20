@@ -7,9 +7,9 @@
 function hello (guest, me) {
   let greet = `Hello, ${guest}! `;
   function intro (name) {
-    greet = greet + `My name is ${name}.`
+    greet += `My name is ${name}.`
   }
-  intro(me)
+  intro(me);
   return greet;
 }
 

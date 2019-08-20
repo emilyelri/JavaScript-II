@@ -95,7 +95,35 @@ console.log(ticketPriceTotal);
 // Now that you have used .forEach(), .map(), .filter(), and .reduce().  I want you to think of potential problems you could solve given the data set and the 5k fun run theme.  Try to create and then solve 3 unique problems using one or many of the array methods listed above.
 
 // Problem 1
+// Lists runners in Last Name, First Name format, alphabetically
+  let lastNameFirst = [];
+
+  runners.forEach(function(runner) {
+    lastNameFirst.push(`${runner.last_name}, ${runner.first_name}`);
+  });
+  lastNameFirst.sort();
+
+  console.log(lastNameFirst);
 
 // Problem 2
+// Pulls the names of all the companies, sorted alphabetically
+  let companies = [];
+
+  runners.forEach(function(runner) {
+    companies.push(runner.company_name);
+  });
+  companies.sort();
+
+  console.log(companies);
 
 // Problem 3
+// Averages out donation per runner
+// avgDon = ticketPriceTotal/runners.length;
+
+let donTotal = 0;
+runners.forEach(function(runner) {
+  donTotal += runner.donation;  
+});
+const avgDon = donTotal / runners.length;
+
+console.log(avgDon);
