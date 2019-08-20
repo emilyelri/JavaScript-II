@@ -81,10 +81,20 @@ console.log(contains('Apple', items, checker));         // correct
 
 /* STRETCH PROBLEM */
 
+const itemsDup = ['Pencil', 'Notebook', 'yo-yo', 'Gum', 'Pencil', 'Notebook', 'yo-yo', 'Gum', 'Pencil'];
+
 function removeDuplicates(array, cb) {
   // removeDuplicates removes all duplicate values from the given array.
   // Pass the duplicate free array to the callback function.
   // Do not mutate the original array.
+  let singles = [];
+  array.forEach(function(element) {
+    if (singles.includes(element) == false) {
+      singles.push(element);
+    }
+    return singles;
+  });
+  return cb(singles);
 }
 
-console.log();
+console.log(removeDuplicates(itemsDup, checker));
